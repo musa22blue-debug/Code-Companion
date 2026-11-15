@@ -1,0 +1,29 @@
+{
+  "name": "code-companion",
+  "version": "11.1.0",
+  "description": "A beautiful coding productivity companion",
+  "author": "Musa",
+  "main": "main.js",
+  "scripts": { "start": "electron .", "dist": "electron-builder --win nsis" },
+  "build": {
+    "appId": "com.musa.codecompanion",
+    "productName": "Code Companion",
+    "artifactName": "CodeCompanion-Setup-${version}.${ext}",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "Code Companion",
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "deleteAppDataOnUninstall": true
+    }
+  },
+  "devDependencies": { "electron": "^29.0.0", "electron-builder": "^24.12.0" }
+}
